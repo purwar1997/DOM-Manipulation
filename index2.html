@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      .heading {
+        text-align: center;
+      }
+
+      .para {
+        font-size: 20px;
+      }
+
+      #div {
+        font-size: 20px;
+        color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">Hello JavaScript</h1>
+    <h2 class="heading">Hello HTML</h2>
+    <p name="css">This is CSS</p>
+    <p class="para">Lorem ipsum dolor sit amet.</p>
+    <div id="div">
+      <span>COOL JS</span>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia,
+      voluptates.
+    </div>
+
+    <ul>
+      <li class="list">One</li>
+      <li class="list">Two</li>
+      <li class="list">Three</li>
+    </ul>
+
+    <script>
+      // Finding an element
+
+      // 1. by element name
+      console.log(document.getElementsByTagName('h1'));
+      console.log(document.getElementsByTagName('p'));
+
+      // 2. by name attribute
+      console.log(document.getElementsByName('css'));
+
+      // 3. by class name
+      console.log(document.getElementsByClassName('heading'));
+
+      // 4. by id value
+      console.log(document.getElementById('div'));
+
+      // 5. by using selectors
+      // querySelector() selects elements by tag name, class name and id value
+      console.log(document.querySelector('.heading'));
+      console.log(document.querySelectorAll('.heading'));
+      console.log(document.querySelector('.para')); // class name
+      console.log(document.querySelector('#div')); // id value
+      console.log(document.querySelector('ul')); // tag name
+      console.log(document.querySelectorAll('li'));
+
+      // to access text of an HTML element
+      let text = document.querySelector('.heading').textContent;
+      console.log(text);
+
+      document.querySelector('.heading').textContent = 'Hello Python';
+      document.querySelector('.heading').innerText = 'Hello World';
+
+      let value = document.getElementById('div').innerText; // only text
+      console.log(value);
+
+      console.log(document.getElementById('div').innerHTML); // text + inner elements
+
+      let listItems = document.getElementsByClassName('list');
+      for (const item of listItems) {
+        item.innerText = `Item ${item.innerText}`;
+      }
+    </script>
+  </body>
+</html>

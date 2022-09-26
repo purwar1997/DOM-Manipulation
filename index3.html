@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1 class="heading">Full Stack Javascript Web Developer</h1>
+    <h2 id="company">By iNeuron</h2>
+    <p>HTML</p>
+    <p>CSS</p>
+    <p>JS</p>
+
+    <script>
+      console.log(document.querySelector('.heading').innerText);
+      console.log(document.querySelector('#company').innerText);
+
+      let items = document.querySelectorAll('p');
+      for (let item of items) {
+        console.log(item.textContent);
+      }
+    </script>
+  </body>
+</html>

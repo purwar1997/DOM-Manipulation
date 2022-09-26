@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <h1>DOM Manipulation</h1>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JS</li>
+    </ul>
+
+    <!-- script tag is used to insert JS code into HTML file or to link JS file with HTML file -->
+    <script>
+      // --- ROOT ---
+
+      // returns document object
+      console.log(document);
+      console.log(window.document); // global object
+      console.log(this.document); // global variable
+      console.log(document.documentElement); // all HTML elements
+
+      // --- SUBROOT / CHILDREN ---
+      console.log(document.head.children); // an array
+      console.log(document.body.children);
+
+      console.log(document.head.childElementCount); // number
+      console.log(document.body.childElementCount);
+
+      console.log(document.body.firstChild); // nodelist
+      console.log(document.body.lastChild);
+
+      console.log(document.body.firstElementChild); // HTML element
+      console.log(document.body.lastElementChild);
+      console.log(document.head.lastElementChild);
+    </script>
+  </body>
+</html>
