@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <ul></ul>
+
+    <script>
+      // adding an element
+      // 1. create a new element
+      // 2. specify where to append it
+
+      let listItems = `
+      <li>GO</li>
+      <li>Dart</li>
+      <li>Typescript</li>
+      `;
+
+      let list = document.querySelector('ul');
+      list.innerHTML = listItems;
+
+      listItems = document.querySelectorAll('li');
+
+      for (let list of listItems) {
+        list.innerHTML = `<a href="#">Click here</a> to learn ${list.textContent}`;
+      }
+
+      let links = document.querySelectorAll('a');
+
+      for (let link of links) {
+        link.style.textDecoration = 'none';
+      }
+    </script>
+  </body>
+</html>

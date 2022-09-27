@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1>Full Stack JavaScript Course</h1>
+
+    <script>
+      // html => root element
+      // head, body => subroot elements
+      // head and body elements can be directly accessed
+      console.log(document.head);
+      console.log(document.body);
+
+      document.body.style.textAlign = 'center';
+      document.body.style.fontFamily = 'Arial';
+
+      let heading = document.querySelector('h1');
+      heading.style.fontSize = '30px';
+      heading.style.marginTop = '40px';
+
+      function createElement(event) {
+        let element = document.createElement('p');
+        element.textContent = `Event : ${event}`;
+        element.style.fontSize = '18px';
+        document.body.appendChild(element);
+      }
+
+      document.addEventListener('mouseenter', () => {
+        createElement('mouse enter');
+      });
+
+      //   document.addEventListener('click', () => {
+      //     createElement('click');
+      //   });
+
+      document.addEventListener('dblclick', () => {
+        createElement('double click');
+      });
+
+      //   document.addEventListener('keypress', () => {
+      //     createElement('keypress');
+      //   });
+
+      document.addEventListener('keypress', event => {
+        createElement(`keypress Key : ${event.key}`);
+      });
+    </script>
+  </body>
+</html>

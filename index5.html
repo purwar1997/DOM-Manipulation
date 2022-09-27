@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <script>
+      // h1 element
+      let heading = document.createElement('h1'); // creating an element
+      heading.className = 'main'; // adding a class
+      heading.style.fontSize = '30px';
+      heading.textContent = 'DOM in JavaScript';
+      document.body.appendChild(heading); // appending an element
+
+      // p element
+      let text = document.createElement('p');
+      text.className = 'text';
+      text.setAttribute('title', 'This is a paragraph');
+      text.style.fontSize = '18px';
+      text.textContent = 'lorem ipsum JS';
+      document.body.appendChild(text);
+
+      // ul element
+      let list = document.createElement('ul');
+      document.body.appendChild(list);
+
+      const content = ['HTML', 'CSS', 'JS', 'React', 'Node'];
+
+      // li elements
+      for (let text of content) {
+        let listItem = document.createElement('li');
+        listItem.textContent = text;
+        listItem.style.marginBlock = '5px';
+        list.appendChild(listItem);
+      }
+    </script>
+  </body>
+</html>

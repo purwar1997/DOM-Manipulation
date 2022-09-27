@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1>Full Stack JS course</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, pariatur!
+    </p>
+
+    <ul>
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+    </ul>
+
+    <script>
+      // Selecting elements
+      const body = document.querySelector('body');
+      const heading = document.querySelector('h1');
+      const text = document.querySelector('p');
+      const list = document.querySelector('ul');
+      const listItems = document.querySelectorAll('li');
+
+      // Removing elements from the DOM
+      body.removeChild(heading);
+      body.removeChild(text);
+
+      for (const listItem of listItems) {
+        list.removeChild(listItem);
+      }
+    </script>
+  </body>
+</html>

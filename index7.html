@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <script>
+      // Event Listeners/Event Handlers
+
+      let body = document.querySelector('body');
+
+      // creating p element
+      let text = document.createElement('p');
+      text.textContent =
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad id sapiente soluta asperiores quo ex numquam sequi atque itaque repellat!';
+      body.appendChild(text);
+
+      // creating span element
+      let span = document.createElement('span');
+      span.textContent =
+        ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad id sapiente soluta asperiores quo ex numquam sequi atque itaque repellat!';
+      span.style.display = 'none';
+      text.appendChild(span);
+
+      // creating button element
+      let button = document.createElement('button');
+      button.textContent = 'Read More';
+      body.appendChild(button);
+
+      // addEventListener() always take two arguments => 1. event  2. callback function
+      // this callback is known as Event handler
+      button.addEventListener('click', () => {
+        span.style.display = 'inline';
+      });
+
+      document.addEventListener('keypress', event => {
+        if (event.key === ' ') {
+          text.style.display = 'none';
+          button.style.display = 'none';
+          body.style.backgroundColor = 'black';
+        }
+
+        if (event.key === 'Enter') {
+          text.style.display = 'block';
+          button.style.display = 'inline';
+          body.style.backgroundColor = 'white';
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -9,9 +9,17 @@
   <body>
     <h1 class="heading">Full Stack Javascript Web Developer</h1>
     <h2 id="company">By iNeuron</h2>
+    <h3>DOM</h3>
+
     <p>HTML</p>
     <p>CSS</p>
     <p>JS</p>
+
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
 
     <script>
       console.log(document.querySelector('.heading').innerText);
@@ -21,6 +29,41 @@
       for (let item of items) {
         console.log(item.textContent);
       }
+
+      // Modifying an element
+      // 1. adding new styles
+      // 2. adding new attributes
+      // 3. adding text content
+      // 4. adding inner HTML
+
+      // updating CSS styles
+      document.querySelector('body').style.backgroundColor = '#ddd';
+      document.querySelector('body').style.fontFamily = 'Arial';
+      document.querySelector('h1').style.textAlign = 'center';
+      document.querySelector('h2').style.textAlign = 'center';
+
+      for (let item of items) {
+        item.style.color = 'green';
+        item.style.fontWeight = 'bold';
+      }
+
+      // adding attributes to an HTML element
+      document.querySelector('ul').setAttribute('id', 'list');
+
+      for (let item of items) {
+        item.setAttribute('class', 'text');
+      }
+
+      let elements = document.querySelectorAll('li');
+      for (let element of elements) {
+        element.setAttribute('class', 'list-item');
+        element.setAttribute('title', 'tooltip');
+      }
+
+      // to add multiple classes
+      document.querySelector('h3').classList.add('heading', 'DOM', 'JS');
+      items[0].classList.add('paragraph', 'first');
+      items[2].classList.add('paragraph', 'last');
     </script>
   </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      button {
+        display: block;
+        margin: 100px auto;
+        background-color: #333;
+        color: #fff;
+        font-size: 18px;
+        border: none;
+        border-radius: 25px;
+        padding: 12px 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Click Here</button>
+
+    <script>
+      let btn = document.querySelector('button');
+
+      function random() {
+        return Math.floor(Math.random() * 256);
+      }
+
+      function changeBGColor() {
+        document.body.style.backgroundColor = `rgb(${random()}, ${random()}, ${random()})`;
+      }
+
+      //   btn.addEventListener('click', changeBGColor);
+      //   btn.addEventListener('dblclick', changeBGColor);
+      //   btn.addEventListener('mouseenter', changeBGColor);
+      //   btn.addEventListener('mouseover', changeBGColor);
+      //   btn.addEventListener('mouseout', changeBGColor);
+      //   btn.addEventListener('focus', changeBGColor);
+      //   btn.addEventListener('blur', changeBGColor);
+
+      //   event happens when a key is pressed
+      //   doesn't work for all keys; only works for character keys
+      //   document.addEventListener('keypress', changeBGColor);
+
+      //   event happens when a key is pressed
+      //   works for all the keys
+      //   document.addEventListener('keydown', changeBGColor);
+
+      //   event happens when a key is released
+      //   works for all the keys
+      document.addEventListener('keyup', changeBGColor);
+      document.addEventListener('keyup', event => console.log(event.key));
+    </script>
+  </body>
+</html>
