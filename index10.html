@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1>DOM Manipulation</h1>
+    <p id="js"></p>
+    <button onclick="maths()">Submit</button>
+    <button class="click-btn" onclick="text()">Click Me</button>
+    <button class="reset-btn" onclick="reset()">Reset</button>
+
+    <script>
+      //  ---- POPUPS ----
+
+      //  alert() is used to display message
+      //  alert('Welcome to the JS Bootcamp');
+      //  window.alert('You have become a JS developer');
+
+      //   confirm() is used to ask question and returns either true or false
+      //   const value = confirm('Are you in college?');
+      //   console.log(value);
+
+      //   let value = confirm('Are you OK ?');
+      //   let element = document.getElementById('js');
+
+      //   element.innerText = value
+      //     ? 'You pressed OK button'
+      //     : 'You pressed Cancel butoon';
+
+      //   prompt() is used to get input value from a user
+      //   Syntax: prompt(message, defaultValue)
+
+      //   const input = prompt('Enter your name', 'Tom');
+      //   console.log(input);
+
+      //   const value = Number(prompt('What is 20-10 ? Solve it.'));
+      //   const element = document.querySelector('#js');
+
+      //   element.innerText = value === 10 ? 'Correct Answer' : 'Wrong Answer';
+
+      function maths() {
+        const value = Number(prompt('What is 20-10 ? Solve it.'));
+        const element = document.querySelector('#js');
+
+        element.innerText = value === 10 ? 'Correct Answer' : 'Wrong Answer';
+      }
+
+      function text() {
+        const para = document.createElement('p');
+        para.textContent = 'Welcome to Full Stack JS Bootcamp';
+        document.body.appendChild(para);
+
+        document.querySelector('.click-btn').setAttribute('disabled', 'true');
+      }
+
+      function reset() {
+        const all = document.querySelectorAll('body *:not(script)');
+
+        for (let element of all) {
+          document.body.removeChild(element);
+        }
+      }
+    </script>
+  </body>
+</html>

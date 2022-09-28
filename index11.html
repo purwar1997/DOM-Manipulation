@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1>DOM Manipulation</h1>
+
+    <!-- Event listeners for buttons -->
+    <!-- onclick, ondblclick, onmouseenter, onmouseleave, onmouseover, onmouseout, onfocus, onblur -->
+    <!-- <button id="btn" onblur="changeStyles()">Click Me</button> -->
+
+    <button id="btn">Click Me</button>
+
+    <script>
+      function changeStyles() {
+        const btn = document.getElementById('btn');
+        btn.style.backgroundColor = 'green';
+        btn.style.color = '#fff';
+        btn.style.border = '0px';
+        btn.style.fontSize = '18px';
+        btn.style.paddingBlock = '8px';
+        btn.style.paddingInline = '15px';
+        btn.style.borderRadius = '20px';
+      }
+
+      function mouseClick() {
+        let para = document.createElement('p');
+        para.textContent = 'Welcome to the JS Bootcamp';
+        document.body.appendChild(para);
+      }
+
+      //   document.addEventListener('click', mouseClick);
+
+      const clickBtn = document.querySelector('#btn');
+      clickBtn.addEventListener('dblclick', mouseClick);
+    </script>
+  </body>
+</html>
