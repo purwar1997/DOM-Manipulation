@@ -8,5 +8,147 @@
   </head>
   <body>
     <h1>DOM Manipulation</h1>
+    <label for="user-name">Enter your name</label>
+    <input type="text" name="username" id="user-name" />
+    <p id="para"></p>
+
+    <label for="qna-box">Have any question, ask us</label><br /><br />
+    <textarea name="qna-box" id="qna-box" cols="30" rows="5"></textarea>
+    <p id="para1"></p>
+
+    <label for="country">Which country do you live in ?</label>
+    <select name="country" id="country">
+      <option value="">--Choose your country--</option>
+      <option value="Bharat">Bharat</option>
+      <option value="Nepal">Nepal</option>
+      <option value="Russia">Russia</option>
+      <option value="USA">USA</option>
+      <option value="Denmark">Denmark</option>
+    </select>
+
+    <p id="para2"></p>
+
+    <label>Choose your gender</label><br /><br />
+
+    <label class="gender"
+      ><input type="radio" name="gender" value="male" /> Male</label
+    ><br />
+    <label class="gender"
+      ><input type="radio" name="gender" value="female" /> Female</label
+    ><br />
+    <label class="gender"
+      ><input type="radio" name="gender" value="trans" /> Trans</label
+    >
+
+    <p id="gender"></p>
+
+    <label>Choose your subjects</label><br /><br />
+
+    <label
+      ><input
+        class="checkbox"
+        type="checkbox"
+        name="subject"
+        value="Maths"
+        oninput="box(this)"
+      />
+      Maths</label
+    ><br />
+
+    <label
+      ><input
+        class="checkbox"
+        type="checkbox"
+        name="subject"
+        value="Science"
+        oninput="box(this)"
+      />
+      Science</label
+    ><br />
+
+    <label
+      ><input
+        class="checkbox"
+        type="checkbox"
+        name="subject"
+        value="English"
+        oninput="box(this)"
+      />
+      English</label
+    ><br />
+
+    <label
+      ><input
+        class="checkbox"
+        type="checkbox"
+        name="subject"
+        value="History"
+        oninput="box(this)"
+      />
+      History</label
+    >
+
+    <p id="subjects"></p>
+
+    <script>
+      // input event works on input, textarea and select elements
+
+      // input element
+      function displayText() {
+        let text = document.getElementById('user-name').value;
+        document.getElementById('para').innerText = text.toUpperCase();
+      }
+
+      let input = document.getElementById('user-name');
+      input.addEventListener('input', displayText);
+
+      // textarea element
+      function displayText1() {
+        let text = document.getElementById('qna-box').value;
+        document.getElementById('para1').innerText = text;
+      }
+
+      let textArea = document.getElementById('qna-box');
+      textArea.addEventListener('input', displayText1);
+
+      // select element
+      function displayText2() {
+        let value = document.getElementById('country').value;
+        let para = document.getElementById('para2');
+
+        if (value) {
+          para.innerText = `You live in ${value}`;
+        } else {
+          para.innerText = 'Please choose your country';
+        }
+      }
+
+      let select = document.getElementById('country');
+      select.addEventListener('input', displayText2);
+
+      // input event also works on radio buttons and checkboxes
+
+      // radio buttons
+      let radioBtn = document.querySelectorAll('input[type="radio"]');
+
+      function radioEvent() {
+        document.getElementById(
+          'gender'
+        ).innerText = `You selected ${this.value[0].toUpperCase()}${this.value.slice(
+          1
+        )}`;
+      }
+
+      for (const btn of radioBtn) {
+        btn.addEventListener('input', radioEvent);
+      }
+
+      // checkboxes
+      function box(checkbox) {
+        document.getElementById(
+          'subjects'
+        ).innerText = `You chose ${checkbox.value}`;
+      }
+    </script>
   </body>
 </html>
