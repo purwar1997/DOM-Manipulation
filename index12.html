@@ -60,10 +60,10 @@
         class="checkbox"
         type="checkbox"
         name="subject"
-        value="Science"
+        value="Computer Science"
         oninput="box(this)"
       />
-      Science</label
+      Computer Science</label
     ><br />
 
     <label
@@ -71,10 +71,10 @@
         class="checkbox"
         type="checkbox"
         name="subject"
-        value="English"
+        value="Biology"
         oninput="box(this)"
       />
-      English</label
+      Biology</label
     ><br />
 
     <label
@@ -82,10 +82,21 @@
         class="checkbox"
         type="checkbox"
         name="subject"
-        value="History"
+        value="Physics"
         oninput="box(this)"
       />
-      History</label
+      Physics</label
+    ><br />
+
+    <label
+      ><input
+        class="checkbox"
+        type="checkbox"
+        name="subject"
+        value="Economics"
+        oninput="box(this)"
+      />
+      Economics</label
     >
 
     <p id="subjects"></p>
@@ -143,11 +154,21 @@
         btn.addEventListener('input', radioEvent);
       }
 
+      let subjects = [];
+
       // checkboxes
       function box(checkbox) {
-        document.getElementById(
-          'subjects'
-        ).innerText = `You chose ${checkbox.value}`;
+        let currValue = checkbox.value.toLowerCase();
+        subjects.push(currValue);
+        let textEl = document.getElementById('subjects');
+
+        if (subjects.length === 1) {
+          textEl.innerText = `You have chosen ${currValue}`;
+        } else if (subjects.length === 5) {
+          textEl.innerText = `${textEl.innerText} and ${currValue}.`;
+        } else {
+          textEl.innerText = `${textEl.innerText}, ${currValue}`;
+        }
       }
     </script>
   </body>

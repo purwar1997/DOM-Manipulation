@@ -14,11 +14,11 @@
     <button class="reset-btn" onclick="reset()">Reset</button>
 
     <script>
-      //  ---- POPUPS ----
+      //   ---- POPUPS ----
 
-      //  alert() is used to display message
-      //  alert('Welcome to the JS Bootcamp');
-      //  window.alert('You have become a JS developer');
+      //   alert() is used to display message
+      //   alert('Welcome to the JS Bootcamp');
+      //   window.alert('You have become a JS developer');
 
       //   confirm() is used to ask question and returns either true or false
       //   const value = confirm('Are you in college?');
@@ -34,7 +34,7 @@
       //   prompt() is used to get input value from a user
       //   Syntax: prompt(message, defaultValue)
 
-      //   const input = prompt('Enter your name', 'Tom');
+      //   const input = prompt('Enter your name', 'Shubham');
       //   console.log(input);
 
       //   const value = Number(prompt('What is 20-10 ? Solve it.'));
@@ -57,6 +57,7 @@
         document.querySelector('.click-btn').setAttribute('disabled', 'true');
       }
 
+      // not() function can only contain simple selectors(tag name, class name, id value) inside it
       function reset() {
         const all = document.querySelectorAll('body *:not(script)');
 

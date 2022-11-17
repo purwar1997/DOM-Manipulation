@@ -12,9 +12,10 @@
     <script>
       // html => root element
       // head, body => subroot elements
-      // head and body elements can be directly accessed
+      // head, body and title elements can be directly accessed
       console.log(document.head);
       console.log(document.body);
+      console.log(document.title);
 
       document.body.style.textAlign = 'center';
       document.body.style.fontFamily = 'Arial';
@@ -34,17 +35,13 @@
         createElement('mouse enter');
       });
 
-      //   document.addEventListener('click', () => {
-      //     createElement('click');
-      //   });
+      // document.addEventListener('click', () => {
+      //   createElement('click');
+      // });
 
       document.addEventListener('dblclick', () => {
         createElement('double click');
       });
-
-      //   document.addEventListener('keypress', () => {
-      //     createElement('keypress');
-      //   });
 
       document.addEventListener('keypress', event => {
         createElement(`keypress Key : ${event.key}`);

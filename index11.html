@@ -16,16 +16,15 @@
     <button id="btn">Click Me</button>
 
     <script>
-      function changeStyles() {
-        const btn = document.getElementById('btn');
-        btn.style.backgroundColor = 'green';
-        btn.style.color = '#fff';
-        btn.style.border = '0px';
-        btn.style.fontSize = '18px';
-        btn.style.paddingBlock = '8px';
-        btn.style.paddingInline = '15px';
-        btn.style.borderRadius = '20px';
-      }
+      const btn = document.getElementById('btn');
+      btn.style.backgroundColor = 'green';
+      btn.style.color = '#fff';
+      btn.style.border = '0px';
+      btn.style.fontSize = '18px';
+      btn.style.paddingBlock = '8px';
+      btn.style.paddingInline = '15px';
+      btn.style.borderRadius = '20px';
+      btn.style.cursor = 'pointer';
 
       function mouseClick() {
         let para = document.createElement('p');
@@ -33,10 +32,8 @@
         document.body.appendChild(para);
       }
 
-      //   document.addEventListener('click', mouseClick);
-
-      const clickBtn = document.querySelector('#btn');
-      clickBtn.addEventListener('dblclick', mouseClick);
+      //  document.addEventListener('click', mouseClick);
+      btn.addEventListener('dblclick', mouseClick);
     </script>
   </body>
 </html>

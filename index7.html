@@ -25,15 +25,29 @@
       span.style.display = 'none';
       text.appendChild(span);
 
-      // creating button element
-      let button = document.createElement('button');
-      button.textContent = 'Read More';
-      body.appendChild(button);
+      // creating button elements
+      let btn1 = document.createElement('button');
+      btn1.textContent = 'Show More';
+      body.appendChild(btn1);
+
+      let btn2 = document.createElement('button');
+      btn2.textContent = 'Show Less';
+      body.appendChild(btn2);
+      btn2.style.display = 'none';
 
       // addEventListener() always take two arguments => 1. event  2. callback function
-      // this callback is known as Event handler
-      button.addEventListener('click', () => {
+      // This callback function is known as Event handler or Event listener
+
+      btn1.addEventListener('click', () => {
         span.style.display = 'inline';
+        btn1.style.display = 'none';
+        btn2.style.display = 'block';
+      });
+
+      btn2.addEventListener('click', () => {
+        span.style.display = 'none';
+        btn1.style.display = 'block';
+        btn2.style.display = 'none';
       });
 
       document.addEventListener('keypress', event => {
