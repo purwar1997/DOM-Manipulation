@@ -16,11 +16,11 @@
     <script>
       //   ---- POPUPS ----
 
-      //   alert() is used to display message
+      //   alert() is used to display a message
       //   alert('Welcome to the JS Bootcamp');
       //   window.alert('You have become a JS developer');
 
-      //   confirm() is used to ask question and returns either true or false
+      //   confirm() is used to ask a question and returns either true or false
       //   const value = confirm('Are you in college?');
       //   console.log(value);
 
@@ -43,7 +43,7 @@
       //   element.innerText = value === 10 ? 'Correct Answer' : 'Wrong Answer';
 
       function maths() {
-        const value = Number(prompt('What is 20-10 ? Solve it.'));
+        const value = Number(prompt('What is 20-10? Solve it.'));
         const element = document.querySelector('#js');
 
         element.innerText = value === 10 ? 'Correct Answer' : 'Wrong Answer';
@@ -53,7 +53,6 @@
         const para = document.createElement('p');
         para.textContent = 'Welcome to Full Stack JS Bootcamp';
         document.body.appendChild(para);
-
         document.querySelector('.click-btn').setAttribute('disabled', 'true');
       }
 

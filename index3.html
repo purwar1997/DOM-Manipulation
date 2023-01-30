@@ -44,7 +44,7 @@
       document.querySelector('h3').style.fontSize = '25px';
 
       for (let item of items) {
-        item.style.color = 'red';
+        item.style.color = 'blue';
         item.style.fontWeight = 'bold';
       }
 
@@ -65,6 +65,15 @@
       document.querySelector('h3').classList.add('heading', 'DOM', 'JS');
       items[0].classList.add('paragraph', 'first');
       items[2].classList.add('paragraph', 'last');
+
+      console.log(items[0].classList, items[1].classList, items[2].classList);
+
+      // to remove multiple classes
+      items[0].classList.remove('text', 'first');
+      items[1].classList.remove('text');
+      items[2].classList.remove('text', 'last');
+
+      items[1].classList.add('paragraph');
     </script>
   </body>
 </html>

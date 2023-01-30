@@ -37,7 +37,8 @@
       ><input type="radio" name="gender" value="female" /> Female</label
     ><br />
     <label class="gender"
-      ><input type="radio" name="gender" value="trans" /> Trans</label
+      ><input type="radio" name="gender" value="transgender" />
+      Transgender</label
     >
 
     <p id="gender"></p>
@@ -49,7 +50,7 @@
         class="checkbox"
         type="checkbox"
         name="subject"
-        value="Maths"
+        value="maths"
         oninput="box(this)"
       />
       Maths</label
@@ -60,7 +61,7 @@
         class="checkbox"
         type="checkbox"
         name="subject"
-        value="Computer Science"
+        value="computer science"
         oninput="box(this)"
       />
       Computer Science</label
@@ -71,7 +72,7 @@
         class="checkbox"
         type="checkbox"
         name="subject"
-        value="Biology"
+        value="biology"
         oninput="box(this)"
       />
       Biology</label
@@ -82,7 +83,7 @@
         class="checkbox"
         type="checkbox"
         name="subject"
-        value="Physics"
+        value="physics"
         oninput="box(this)"
       />
       Physics</label
@@ -93,7 +94,7 @@
         class="checkbox"
         type="checkbox"
         name="subject"
-        value="Economics"
+        value="economics"
         oninput="box(this)"
       />
       Economics</label
@@ -140,17 +141,17 @@
       // input event also works on radio buttons and checkboxes
 
       // radio buttons
-      let radioBtn = document.querySelectorAll('input[type="radio"]');
+      let radioBtns = document.querySelectorAll('input[type="radio"]');
 
       function radioEvent() {
         document.getElementById(
           'gender'
-        ).innerText = `You selected ${this.value[0].toUpperCase()}${this.value.slice(
+        ).innerText = `You are a ${this.value[0].toUpperCase()}${this.value.slice(
           1
         )}`;
       }
 
-      for (const btn of radioBtn) {
+      for (const btn of radioBtns) {
         btn.addEventListener('input', radioEvent);
       }
 
@@ -158,16 +159,16 @@
 
       // checkboxes
       function box(checkbox) {
-        let currValue = checkbox.value.toLowerCase();
+        let currValue = checkbox.value;
         subjects.push(currValue);
-        let textEl = document.getElementById('subjects');
+        let text = document.getElementById('subjects');
 
         if (subjects.length === 1) {
-          textEl.innerText = `You have chosen ${currValue}`;
+          text.innerText = `You have chosen ${currValue}`;
         } else if (subjects.length === 5) {
-          textEl.innerText = `${textEl.innerText} and ${currValue}.`;
+          text.innerText = `${text.innerText} and ${currValue}.`;
         } else {
-          textEl.innerText = `${textEl.innerText}, ${currValue}`;
+          text.innerText = `${text.innerText}, ${currValue}`;
         }
       }
     </script>

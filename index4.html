@@ -22,6 +22,7 @@
 
       let list = document.querySelector('ul');
       list.innerHTML = listItems;
+      list.style.listStyleType = 'none';
 
       listItems = document.querySelectorAll('li');
 
@@ -33,6 +34,7 @@
 
       for (let link of links) {
         link.style.textDecoration = 'none';
+        link.style.color = 'green';
       }
     </script>
   </body>

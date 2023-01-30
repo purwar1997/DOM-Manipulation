@@ -52,14 +52,10 @@
 
       document.addEventListener('keypress', event => {
         if (event.key === ' ') {
-          text.style.display = 'none';
-          button.style.display = 'none';
-          body.style.backgroundColor = 'black';
+          body.style.backgroundColor = 'lightgreen';
         }
 
         if (event.key === 'Enter') {
-          text.style.display = 'block';
-          button.style.display = 'inline';
           body.style.backgroundColor = 'white';
         }
       });
