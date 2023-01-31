@@ -17,27 +17,39 @@
 
     <!-- script tag is used to insert JS code into HTML file or to link JS file with HTML file -->
     <script>
-      // --- ROOT ---
+      // document object is the root node
 
       // returns a document object
       console.log(document);
       console.log(window.document); // global object
       console.log(this.document); // global variable
-      console.log(document.documentElement); // all HTML elements
 
-      // --- SUBROOT / CHILDREN ---
-      console.log(document.head.children); // HTML collection
+      console.log(document.documentElement); // returns an element inside of it i.e html element
+      console.log(document.all); // returns all the elements
+
+      // --- child elements ---
+      console.log(document.head.children); // returns an HTML collection
       console.log(document.body.children);
 
       console.log(document.head.childElementCount); // number of child elements
       console.log(document.body.childElementCount);
 
-      console.log(document.body.firstChild); // returns a nodelist
-      console.log(document.body.lastChild);
-
       console.log(document.body.firstElementChild); // returns an HTML element
       console.log(document.body.lastElementChild);
       console.log(document.head.lastElementChild);
+
+      // --- child nodes ---
+      // line breaks, comments, HTML elements, innertext, attributes are all considered as DOM nodes
+      // only HTML elements and text inside it partake in parent-child-sibling relationship
+
+      console.log(document.head.childNodes); // returns a nodelist
+      console.log(document.body.childNodes);
+
+      console.log(document.body.firstChild); // returns first item of nodelist
+      console.log(document.body.lastChild); // returns last item of nodelist
+
+      // HTMLCollection, Nodelist, DOMTokenList are all array like objects but not exactly array
+      // so they have their own methods and properties
     </script>
   </body>
 </html>
