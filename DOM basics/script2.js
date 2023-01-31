@@ -34,7 +34,7 @@ ul.childNodes[9].style.backgroundColor = 'lightgreen';
 /*
   - HTMLCollection only contains HTML elements
   - NodeList contains all the nodes(HTML elements, text and comments)
-  - line breaks and spaces are also considered text
+  - line breaks and spaces are also considered as text
 */
 
 // Sibling node traversal

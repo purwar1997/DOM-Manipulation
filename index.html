@@ -17,7 +17,10 @@
 
     <!-- script tag is used to insert JS code into HTML file or to link JS file with HTML file -->
     <script>
-      // document object is the root node
+      // window => top level global object
+      // document => root node
+      // html => root element
+      // head and body => subroot elements
 
       // returns a document object
       console.log(document);
@@ -39,8 +42,9 @@
       console.log(document.head.lastElementChild);
 
       // --- child nodes ---
-      // line breaks, comments, HTML elements, innertext, attributes are all considered as DOM nodes
-      // only HTML elements and text inside it partake in parent-child-sibling relationship
+      // HTML elements, attributes, comments, text between elements, text inside elements, document type declaration
+      // are all considered as nodes of a DOM tree
+      // only HTML attributes do not partake in parent-child-sibling relationship
 
       console.log(document.head.childNodes); // returns a nodelist
       console.log(document.body.childNodes);
@@ -48,7 +52,7 @@
       console.log(document.body.firstChild); // returns first item of nodelist
       console.log(document.body.lastChild); // returns last item of nodelist
 
-      // HTMLCollection, Nodelist, DOMTokenList are all array like objects but not exactly array
+      // HTMLCollection, NodeList, DOMTokenList are all array like objects but not exactly array
       // so they have their own methods and properties
     </script>
   </body>
